@@ -1,0 +1,680 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>1주차</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="05fb1d6f-0e81-4bcb-9c12-bd60a9a69686" class="page sans"><header><h1 class="page-title">1주차</h1></header><div class="page-body"><h1 id="c6069046-60c0-4881-a3bf-830dbfd7c1fd" class="">개요</h1><hr id="8496c07b-11ea-4e2d-b326-c4d9f305f318"/><p id="0769a735-edd0-4eb3-9673-05730dd82362" class="">인공지능의 한분야로 머신러닝,</p><p id="3bac32db-e74e-4b3d-824c-3f90e930c83b" class="">머신러닝: 데이터를 통해서 기계가 스스로 학습하게끔</p><p id="3beff9bc-83b7-4fc6-8d50-0cf28940919b" class="">명시적으로 프로그램을 작성하지 않고, 컴퓨터가 스스로 규칙을 학습하는 연구 분야</p><figure id="14afc8c8-b9f2-43ad-8de2-b3492bc29917" class="image"><a href="1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%2005fb1d6f0e814bcb9c12bd60a9a69686/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-03-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_10.49.46.png"><img style="width:1188px" src="1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%2005fb1d6f0e814bcb9c12bd60a9a69686/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-03-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_10.49.46.png"/></a></figure><ul id="d7664069-27f4-4831-9026-8b99cc1c39ef" class="bulleted-list"><li style="list-style-type:disc">머신러닝의 분류<ul id="341321e5-3650-42b0-924e-b1874121ca1f" class="bulleted-list"><li style="list-style-type:circle">Supervised Learning 지도학습 <ul id="c258be91-0e59-4eb6-ab78-2016dc4355c0" class="bulleted-list"><li style="list-style-type:square">정답 있음</li></ul><ul id="422e1bb1-3baa-400c-b9b3-c27a69c01bc6" class="bulleted-list"><li style="list-style-type:square">데이터 분류 / 올바른 결과 예측</li></ul></li></ul><ul id="fd2efb2b-e26e-44ef-a448-b15ef9009f5e" class="bulleted-list"><li style="list-style-type:circle">Unsupervised Learning 비지도 학습 <ul id="4ed098fb-2157-4c72-8dea-13145c7f0c94" class="bulleted-list"><li style="list-style-type:square">정답 없음</li></ul><ul id="b3f91b96-9cf5-4995-b059-88b3029bad68" class="bulleted-list"><li style="list-style-type:square">데이터의 유의미한 패턴, 구조 발견</li></ul></li></ul><ul id="189ad860-a136-4a79-afab-8a6761d3ba09" class="bulleted-list"><li style="list-style-type:circle">Reinforcement Learning 강화학습  <ul id="b6cb4ca8-dc79-4b0a-b5f8-1c340c94d3ca" class="bulleted-list"><li style="list-style-type:square">행동에 대한 보상</li></ul><ul id="5ca4d5eb-989e-4529-8b5f-a9d25857dd6b" class="bulleted-list"><li style="list-style-type:square">누적 보상을 최대화하는 의사결정</li></ul></li></ul></li></ul><p id="313d591d-8239-4d41-a920-da4eca011b03" class="">
+</p><h1 id="0cf8c5fe-7740-4593-9771-05ae88cc3b0d" class="">지도 학습</h1><hr id="b49d4a66-aa1b-4e08-a0c1-fba30f8742de"/><ul id="f7e995a7-7b80-4819-992c-12aec61a756b" class="bulleted-list"><li style="list-style-type:disc"><strong>분류</strong> - 범주형 변수<p id="ca8e3866-5c05-40c4-b0ef-24486490ea14" class="">주어진 데이터를 정해진 범주에 따라 분류</p><p id="d820947d-a80c-4775-a40d-57c62d22cdbd" class="">예측 결과가 숫자가 아닐 때</p></li></ul><ul id="3f0c50b9-17b2-4887-acbf-9058e3cb7a8c" class="bulleted-list"><li style="list-style-type:disc"><strong>회귀</strong> - 연속형 변수</li></ul><h2 id="d079d054-08df-43ba-b814-58877154fefe" class="block-color-gray_background">선형회귀</h2><table id="782ccfe3-02db-4078-a0c1-9269101c55ac" class="simple-table"><tbody><tr id="1a06a2df-f195-44ae-a964-a5dcaede1d3a"><td id="p_?d" class="">X</td><td id="Kk?a" class="">y</td></tr><tr id="49445023-1bd7-4568-9a1a-f699ba729a1c"><td id="p_?d" class="">독립변수</td><td id="Kk?a" class="">종속변수</td></tr><tr id="2b82b5e0-f838-4c8e-96a3-531801c3d4b2"><td id="p_?d" class="">원인</td><td id="Kk?a" class="">결과</td></tr><tr id="d6d456c9-a5e8-45b3-a7dd-3f51a35833e5"><td id="p_?d" class="">입력변수</td><td id="Kk?a" class="">출력변수</td></tr><tr id="6f50565d-697b-4f92-ba35-694e6b90a602"><td id="p_?d" class="">feature</td><td id="Kk?a" class="">target, label</td></tr></tbody></table><p id="171467a6-4d3b-477b-9818-00d5aae2e598" class="">실제 값과 예측 값 차이(잔차)의 제곱의 합을 최소화</p><figure id="9eeb86c4-03bf-40cf-bcc0-891fd6209855" class="image"><a href="1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%2005fb1d6f0e814bcb9c12bd60a9a69686/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-03-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_11.09.15.png"><img style="width:996px" src="1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%2005fb1d6f0e814bcb9c12bd60a9a69686/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-03-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_11.09.15.png"/></a></figure><p id="2230f40f-59de-466d-acb3-d6493e5b39ee" class="">
+</p><h2 id="748696c2-97db-43f6-9924-ab0b0a7d7243" class="block-color-gray_background">데이터 분리</h2><ul id="9d4ca8f9-d6ae-4047-9974-b87f6649beba" class="bulleted-list"><li style="list-style-type:disc">훈련 세트 80</li></ul><ul id="9792741f-0595-4291-81ea-1c5d955da875" class="bulleted-list"><li style="list-style-type:disc">테스트 세트 20</li></ul><figure id="586b1b9b-d4bf-4d8f-ba84-d590ce63cf3e" class="image"><a href="1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%2005fb1d6f0e814bcb9c12bd60a9a69686/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-03-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_11.28.54.png"><img style="width:945px" src="1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%2005fb1d6f0e814bcb9c12bd60a9a69686/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-03-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_11.28.54.png"/></a></figure><h2 id="e3b18df6-a44d-4066-a447-f00ea3068dc9" class="block-color-gray_background">경사하강법</h2><figure id="833843da-d9a5-455f-9d77-223d2812f152" class="image"><a href="1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%2005fb1d6f0e814bcb9c12bd60a9a69686/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-03-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_11.44.15.png"><img style="width:1101px" src="1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%2005fb1d6f0e814bcb9c12bd60a9a69686/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-03-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_11.44.15.png"/></a></figure><p id="52ece50a-95ad-47c3-ab2d-fdc6f8f8ecfc" class="">최소 제곱법 → 잔차제곱의 합을 최소로 하는 회귀식을 찾는 방법 </p><p id="799de2e3-e1bb-45e2-bdc5-e6d98b3f901f" class="">최소 제곱법의 단점) 노이즈에 취약함, 이상치에 취약함, 독립변수가 많아지면 컴퓨터 자원이 많이 필요로 함</p><p id="6d13d893-a93d-4a0a-b91a-012dd529f7c1" class="">
+</p><p id="4be0a07f-8322-4665-88d1-782c0074e8c4" class="">
+</p><p id="511d15d3-feca-49a5-9ba8-6e003a90f4e3" class="">경사하강법 Gradient Descent </p><p id="017f090a-0a87-462f-85b8-51b8991101d4" class="">목표) 잔차 제곱의 합이 가장 작아지도록 함</p><p id="7113a195-fb4d-4e1c-ae42-9caed9ff18d4" class="">학습률(Learning rate)</p><p id="0b74df4a-d991-48d1-99c5-cd5029fc86c2" class="">에포트(Epoch) - 최적의 훈련값(파라미터)를 찾기 위해서 모든 훈련 세트를 다 사용함</p><p id="06ae450f-08e6-40a9-ad19-24ef806d2fce" class="">
+</p><p id="69828c01-488f-4b8d-9412-df1cb8733676" class="">확률적 경사 하강법 Stochastic Gradient Descent</p><p id="91bb02f4-fcf6-4515-93cf-a5aad646442c" class="">매 단계마다 무작위로 하나의 데이터를 선택하고 그 데이터에 대해서만 기울기를 계산함</p><p id="3b87fe64-6b1e-4f3d-9d26-818dde0a9852" class="">
+</p><p id="5bee53a3-2be0-44c8-a0f9-72ac52d26019" class="">
+</p><h2 id="9620371e-d0f4-4bd0-98b7-9623e250c11b" class="block-color-gray_background">다중 선형회귀</h2><p id="f5a8f7c8-18aa-4299-9b64-a81b23807750" class="">Multiple Linear Regression</p><p id="450cb87a-05b3-4694-ad69-4b68a3fca3a4" class="">y = b+m1x1 + m2x2 +…+mnxn</p><p id="c25ff705-99ec-4602-b60c-1e8daae1d828" class="">종속변수에 영향을 주는 독립변수가 많기 때문에..!</p><p id="687c232e-df7d-4750-966e-f0f7fdd2c78d" class="">
+</p><figure id="5538ea16-086b-4fcb-aecb-014a160512db" class="image"><a href="1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%2005fb1d6f0e814bcb9c12bd60a9a69686/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-03-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_12.48.29.png"><img style="width:1777px" src="1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%2005fb1d6f0e814bcb9c12bd60a9a69686/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-03-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_12.48.29.png"/></a></figure><p id="c23a60b7-ece1-4cc9-b60c-52ca18067ef0" class="">
+</p><ul id="3fc25658-3783-4f1f-904e-2cdd4be46d8e" class="bulleted-list"><li style="list-style-type:disc">원-핫 인코딩 one-hot encoding<p id="c4dcccf1-d7a4-4ff1-9482-7ee58e25e65b" class="">표현하고 싶은 값만 1로, 나머지는 모두 0으로</p></li></ul><ul id="f72b30b2-9d96-4d62-9eb3-05e9e188f3c8" class="bulleted-list"><li style="list-style-type:disc">다중공선성 Multicollinearity<p id="afb7d42f-070a-4f00-861a-7bd3e4a5862c" class="">독립 변수들 간에 서로 강한 상관관계를 가지면서 회귀계수 추정의 오류가 나타나는 문제</p><p id="78aec77c-200b-4181-b219-5435f1d48b77" class="">하나의 피처가 다른 피처에 영향을 미침</p><p id="e0f2c6cb-450e-4537-ac59-a26761511edb" class="">강한 상관관계는 문제가 될 수 있기 때문에 이를 해결해주기 위해서 한 칼럼을 아예 없앰</p><figure id="fa242983-4429-49ba-9879-fa37d7444ee2" class="image"><a href="1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%2005fb1d6f0e814bcb9c12bd60a9a69686/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-03-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_12.52.46.png"><img style="width:1152px" src="1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%2005fb1d6f0e814bcb9c12bd60a9a69686/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-03-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_12.52.46.png"/></a></figure><p id="9ad4a815-660c-4b3a-b833-5ee6bc4baf68" class="">즉 dummy column 이 n개면 n-1개만 사용 → dummy variable trap</p></li></ul><p id="571170c3-e253-4c5e-8b97-13f863cd6610" class="">
+</p><p id="e5679df8-2d49-4276-a3b9-446bfc38fe93" class="">
+</p></div></article></body></html>
